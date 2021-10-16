@@ -28,3 +28,14 @@ Route::get('/customer/details/{id}', 'CustomerController@getCustomerbyId');
 Route::put('/customer/update/{id}', 'CustomerController@updateCustomerbyId');
 
 Route::delete('/customer/delete/{id}', 'CustomerController@deleteCustomerbyId');
+
+
+Route::post('/item/add','ItemController@addItem');
+
+Route::get('/itemlist', 'ItemController@itemList');
+
+Route::get('/item/details/{id}', 'ItemController@getItembyId');
+
+Route::put('/item/update/{id}', 'ItemController@updateItembyId');
+
+Route::delete('/item/delete/{id}', 'ItemController@deleteItembyId');
