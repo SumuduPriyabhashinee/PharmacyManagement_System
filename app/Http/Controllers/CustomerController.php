@@ -6,9 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Models\Customer;
 
+use Illuminate\Support\Facades\Auth;
+
 class CustomerController extends Controller
 {
     public function addCustomer(Request $request){
+
+        $type=Auth::user()->type;
+
+        if($type==1){
+
         $customers= new Customer();
 
         $customers->name=$request->input('name');    
@@ -19,6 +26,9 @@ class CustomerController extends Controller
         $customers->save();
 
         return response()->json(['customers'=>$customers],200);
+        }else{
+            return response()->json(['message'=>'Unauthorized Activity.'],401);
+        }
     }
 
     public function customerList(){

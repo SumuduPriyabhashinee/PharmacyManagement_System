@@ -8,6 +8,11 @@ use App\Models\Item;
 class ItemController extends Controller
 {
     public function addItem(Request $request){
+
+        $type=Auth::user()->type;
+
+        if($type==1){
+
         $items= new Item();
 
         $items->name=$request->input('name');    
@@ -18,6 +23,9 @@ class ItemController extends Controller
         $items->save();
 
         return response()->json(['items'=>$items],200);
+    }else{
+        return response()->json(['message'=>'Unauthorized Activity.'],401);
+    }
     }
 
     public function itemList(){
