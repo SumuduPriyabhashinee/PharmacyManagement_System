@@ -6,9 +6,16 @@ use Illuminate\Http\Request;
 
 use App\Models\Customer;
 
+use Illuminate\Support\Facades\Auth;
+
 class CustomerController extends Controller
 {
     public function addCustomer(Request $request){
+
+        $type=Auth::user()->type;
+
+        if($type==1){
+
         $customers= new Customer();
 
         $customers->name=$request->input('name');    
@@ -18,26 +25,37 @@ class CustomerController extends Controller
         
         $customers->save();
 
-        return response()->json($customers);
+        return response()->json(['customers'=>$customers],200);
+        }else{
+            return response()->json(['message'=>'Unauthorized Activity.'],401);
+        }
     }
 
     public function customerList(){
 
         $customers=Customer::all();
         
-        return response()->json($customers);
+        return response()->json(['customers'=>$customers],200);
     }
 
     public function getCustomerbyId($c_id){
 
         $customers=Customer::find($c_id);
+
+        if($customers){
         
         return response()->json($customers);
+    }
+    else{
+        return response()->json(['message'=>'No customer found'],404);
+    }
     }
 
     public function updateCustomerbyId(Request $request,$c_id){
 
         $customers=Customer::find($c_id);
+
+        if($customers){
 
         $customers->name=$request->input('name');    
         $customers->d_o_b=$request->input('d_o_b');  
@@ -47,14 +65,24 @@ class CustomerController extends Controller
         $customers->save();
 
         return response()->json($customers);
+        }
+        else{
+            return response()->json(['message'=>'No customer found'],404);
+        }
     }
 
     public function deleteCustomerbyId(Request $request,$c_id){
 
         $customers=Customer::find($c_id);
 
+        if($customers){
+
         $customers->delete();
         
-        return response()->json($customers);
+        return response()->json(['message'=>'Successfully Deleted'],200);
+        }
+        else{
+            return response()->json(['message'=>'No item found'],404);
+        }
     }
 }

@@ -8,6 +8,11 @@ use App\Models\Item;
 class ItemController extends Controller
 {
     public function addItem(Request $request){
+
+        $type=Auth::user()->type;
+
+        if($type==1){
+
         $items= new Item();
 
         $items->name=$request->input('name');    
@@ -17,27 +22,38 @@ class ItemController extends Controller
         
         $items->save();
 
-        return response()->json($items);
+        return response()->json(['items'=>$items],200);
+    }else{
+        return response()->json(['message'=>'Unauthorized Activity.'],401);
+    }
     }
 
     public function itemList(){
 
         $items=Item::all();
         
-        return response()->json($items);
+        return response()->json(['items'=>$items],200);
     }
 
     public function getItembyId($i_id){
 
         $items=Item::find($i_id);
+
+        if($items){
+            return response()->json(['items'=>$items],200);
+        }
+        else{
+            return response()->json(['message'=>'No item found'],404);
+        }
         
-        return response()->json($items);
+        
     }
 
     public function updateItembyId(Request $request,$i_id){
 
         $items=Item::find($i_id);
 
+        if($items){
         $items->name=$request->input('name');    
         $items->price=$request->input('price');  
         $items->amount=$request->input('amount');  
@@ -45,15 +61,24 @@ class ItemController extends Controller
         
         $items->save();
 
-        return response()->json($items);
+        return response()->json(['items'=>$items],200);
+    }
+    else{
+        return response()->json(['message'=>'No item found'],404);
+    }
     }
 
     public function deleteItembyId(Request $request,$i_id){
 
         $items=Item::find($i_id);
+        if($items){
 
         $items->delete();
         
-        return response()->json($items);
+        return response()->json(['message'=>'Successfully Deleted'],200);
+        }
+        else{
+            return response()->json(['message'=>'No item found'],404);
+        }
     }
 }
