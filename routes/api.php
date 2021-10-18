@@ -51,9 +51,6 @@ Route::group(['middleware'=>['auth:sanctum','role:owner']],function (){
     
     Route::get('/order/details/{id}', 'OrderController@getOrderbyId');
 
-    
-    Route::put('/order/update/{id}', 'OrderController@updateOrderbyId');
-
     Route::delete('/order/delete/{id}', 'OrderController@deleteOrderbyId');
 
 });

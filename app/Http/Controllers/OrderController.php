@@ -48,24 +48,24 @@ class OrderController extends Controller
         
     }
 
-    public function updateOrderbyId(Request $request,$o_id){
+    // public function updateOrderbyId(Request $request,$o_id){
 
-        $orders=Order::find($o_id);
+    //     $orders=Order::find($o_id);
 
-        if($orders){
-            $orders->item_id=$request->input('item_id');    
-            $orders->customer_id=$request->input('customer_id');  
-            $orders->selling_price=$request->input('selling_price');  
-            $orders->quantity=$request->input('quantity'); 
+    //     if($orders){
+    //         $orders->item_id=$request->input('item_id');    
+    //         $orders->customer_id=$request->input('customer_id');  
+    //         $orders->selling_price=$request->input('selling_price');  
+    //         $orders->quantity=$request->input('quantity'); 
 
-        $orders->save();
+    //     $orders->save();
 
-        return response()->json(['orders'=>$orders],200);
-    }
-    else{
-        return response()->json(['message'=>'No Order found'],404);
-    }
-    }
+    //     return response()->json(['orders'=>$orders],200);
+    // }
+    // else{
+    //     return response()->json(['message'=>'No Order found'],404);
+    // }
+    // }
 
     public function deleteOrderbyId(Request $request,$o_id){
 
