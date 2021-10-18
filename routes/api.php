@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,18 @@ Route::group(['middleware'=>['auth:sanctum','role:owner']],function (){
     Route::get('/itemlist', 'ItemController@itemList');
 
     Route::delete('/item/delete/{id}', 'ItemController@deleteItembyId');
+
+    Route::post('/order/add','OrderController@addOrder');
+
+    Route::get('/orderlist', 'OrderController@OrderList');
+    
+    Route::get('/order/details/{id}', 'OrderController@getOrderbyId');
+
+    
+    Route::put('/order/update/{id}', 'OrderController@updateOrderbyId');
+
+    Route::delete('/order/delete/{id}', 'OrderController@deleteOrderbyId');
+
 });
 
 Route::group(['middleware'=>['auth:sanctum','role:manager|owner']],function (){
