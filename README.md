@@ -42,10 +42,10 @@ mentioned policies.
   <p>Update and Delete Items</p>
 
 ## ER Diagram
-<p align="center"><img src="/ER diagram original.jpg" width="400"></p>
+<p align="center"><img src="/ER diagram original.jpg" width="600"></p>
 
 ## DB Diagram
-<p align="center"><img src="/DB diagram original.png" width="400"></p>
+<p align="center"><img src="/DB diagram original.png" width="600"></p>
 
 ## License
 
