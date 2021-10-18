@@ -45,7 +45,7 @@ mentioned policies.
 <p align="center"><img src="/ER diagram original.jpg" width="400"></p>
 
 ## DB Diagram
-<p align="center"><img src="/DB diagram original.jpg" width="400"></p>
+<p align="center"><img src="/DB diagram original.png" width="400"></p>
 
 ## License
 
