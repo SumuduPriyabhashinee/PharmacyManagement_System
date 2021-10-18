@@ -7,21 +7,26 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Pharmacy Management System backend using Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+There is a pharmacy. With the owner, Manager and Cashier. So they need a system to 
+reduce their workload and a more efficient system than manual processes. This pharmacy 
+has the following operations. 
+-● Maintain Inventory (medicines) 
+-● Maintain Customer records (Including customer details) 
+But there are some restrictions. For this system, 
+-● “add Items/add customers” operations are only done by Owner. Others should not 
+have privileges for adding Items or customers. 
+-● Cashiers can ‘Remove Items” and “Edit items” but cannot do any other operations. 
+-● Manager can Update and delete customer details, but cannot do any other operations. 
+For the above system they need a proper user logging mechanism for managing above 
+mentioned policies.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Universal User Details for first Login
+-name => owner ,
+-email => owner@gmail.com ,
+-password => 123456
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
