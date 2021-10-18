@@ -47,6 +47,9 @@ mentioned policies.
 ## DB Diagram
 <p align="center"><img src="/DB diagram original.png" width="600"></p>
 
+## Routes
+<a href="/Assessment org.pdf"><p>Document</p></a>
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
