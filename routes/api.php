@@ -28,7 +28,7 @@ Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/logout', 'API\AuthController@logout');
 });
 Route::group(['middleware'=>['auth:sanctum','role:owner']],function (){
-    
+
     Route::post('/register', 'API\AuthController@register');
     
     Route::post('/customer/add','CustomerController@addCustomer');
@@ -40,6 +40,8 @@ Route::group(['middleware'=>['auth:sanctum','role:owner']],function (){
     Route::post('/item/add','ItemController@addItem');
 
     Route::get('/itemlist', 'ItemController@itemList');
+
+    Route::get('/item/details/{id}', 'ItemController@getItembyId');
 
     Route::delete('/item/delete/{id}', 'ItemController@deleteItembyId');
 
