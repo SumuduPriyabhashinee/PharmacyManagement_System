@@ -33,22 +33,14 @@ Route::group(['middleware'=>['auth:sanctum','role:owner']],function (){
 
     Route::get('/customer/details/{id}', 'CustomerController@getCustomerbyId');
 
-    Route::put('/customer/update/{id}', 'CustomerController@updateCustomerbyId');
-
-    Route::delete('/customer/delete/{id}', 'CustomerController@deleteCustomerbyId');
-
     Route::post('/item/add','ItemController@addItem');
 
     Route::get('/itemlist', 'ItemController@itemList');
 
-    Route::get('/item/details/{id}', 'ItemController@getItembyId');
-
-    Route::put('/item/update/{id}', 'ItemController@updateItembyId');
-
     Route::delete('/item/delete/{id}', 'ItemController@deleteItembyId');
 });
 
-Route::group(['middleware'=>['auth:sanctum','role:manager']],function (){
+Route::group(['middleware'=>['auth:sanctum','role:manager|owner']],function (){
 
     Route::put('/customer/update/{id}', 'CustomerController@updateCustomerbyId');
 
@@ -56,7 +48,7 @@ Route::group(['middleware'=>['auth:sanctum','role:manager']],function (){
 
 });
 
-Route::group(['middleware'=>['auth:sanctum','role:cashier']],function (){
+Route::group(['middleware'=>['auth:sanctum','role:cashier|owner']],function (){
 
     Route::put('/item/update/{id}', 'ItemController@updateItembyId');
 
