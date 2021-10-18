@@ -18,8 +18,22 @@ class CreateTrigger extends Migration
             BEGIN
                 UPDATE items
                 SET amount = amount - New.quantity
-                WHERE id = orders.item_id;
+                WHERE id = New.item_id
+                ;
             END
+        ');
+
+        // DB::unprepared('
+        // CREATE TRIGGER items_update_on_order AFTER UPDATE ON `orders` FOR EACH ROW
+        //     BEGIN
+        //     IF
+
+        //     END IF
+        //         UPDATE items
+        //         SET amount = amount - New.quantity
+        //         WHERE id = New.item_id
+        //         ;
+        //     END
         ');
     }
 
