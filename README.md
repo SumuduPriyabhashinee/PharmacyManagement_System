@@ -41,6 +41,12 @@ mentioned policies.
   <p>Login to System</p>
   <p>Update and Delete Items</p>
 
+## ER Diagram
+<p align="center"><img src="/ER diagram original.jpg" width="400"></p>
+
+## DB Diagram
+<p align="center"><img src="/DB diagram original.jpg" width="400"></p>
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
