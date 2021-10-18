@@ -18,12 +18,6 @@ class owner extends Seeder
      */
     public function run()
     {
-        // DB::table('users')->insert(
-        //     ['name' => 'owner',
-        //     'email' => 'owner@gmail.com',
-        //     'password' => Hash::make('123456'),
-        // ]
-        // );
         $user = User::create([
             'name'=>'owner',
             'email'=>'owner@gmail.com',
