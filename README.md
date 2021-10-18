@@ -27,6 +27,20 @@ mentioned policies.
 - password => 123456
 
 
+## User roles
+- Owner
+ <p>Login to System</p>
+ <p>Register user for the System</p>
+ <p>Add, View, Update and Delete Customers, Items and Orders</p>
+ 
+- Manager
+  <p>Login to System</p>
+  <p>Update and Delete Customers</p>
+  
+- Cashier
+  <p>Login to System</p>
+  <p>Update and Delete Items</p>
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
