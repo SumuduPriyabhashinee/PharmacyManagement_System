@@ -22,16 +22,16 @@ have privileges for adding Items or customers.
 For the above system they need a proper user logging mechanism for managing above 
 mentioned policies.
 
-## Universal User Details for first Login
+## User Details for first Login
 - email => owner@gmail.com ,
 - password => 123456
 
 
 ## User roles
 - Owner
- <p>Login to System</p>
- <p>Register user for the System</p>
- <p>Add, View, Update and Delete Customers, Items and Orders</p>
+  <p>Login to System</p>
+  <p>Register user for the System</p>
+  <p>Add, View, Update and Delete Customers, Items and Orders</p>
  
 - Manager
   <p>Login to System</p>
