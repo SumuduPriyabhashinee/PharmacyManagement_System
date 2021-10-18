@@ -21,13 +21,15 @@ use App\Http\Controllers\OrderController;
 //     return $request->user();
 // });
 
-Route::post('/register', 'API\AuthController@register');
+
 Route::post('/login', 'API\AuthController@login');
 
 Route::middleware(['auth:sanctum'])->group(function () {
 Route::post('/logout', 'API\AuthController@logout');
 });
 Route::group(['middleware'=>['auth:sanctum','role:owner']],function (){
+    
+    Route::post('/register', 'API\AuthController@register');
     
     Route::post('/customer/add','CustomerController@addCustomer');
 
